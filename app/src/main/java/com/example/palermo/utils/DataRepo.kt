@@ -43,14 +43,6 @@ class DataRepo(val api: ApiInterface) {
         return api.getFacturas()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .flatMap {
-                if (!it.rows.isEmpty()) {
-                    val data = it.rows!!
-                    Single.just(data)
-                } else {
-                    Single.error(ConnectionError("Error"))
-                }
-            }
 
     }
 }

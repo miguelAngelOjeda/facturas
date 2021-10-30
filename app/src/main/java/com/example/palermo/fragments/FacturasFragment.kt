@@ -1,6 +1,7 @@
 package com.example.palermo.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.example.palermo.adapters.FacturasAdapter
 import com.example.palermo.models.Facturas
 import com.example.palermo.ui.BaseFragment
 import com.example.palermo.utils.DataRepo
+import com.example.palermo.utils.d
 import com.example.palermo.utils.setup
 import com.github.salomonbrys.kodein.instance
 import kotlinx.android.synthetic.main.fragment_facturas.*
@@ -29,10 +31,15 @@ class FacturasFragment : BaseFragment() {
     }
 
     private fun setupUI(){
-        val valores = repo.getFacturas().blockingGet();
-        val facturasAdapter = FacturasAdapter(valores);
-        recyclerFacturas.setup(activity)
-        recyclerFacturas.adapter = facturasAdapter
+        d("hola")
+        repo.getFacturas().subscribe( {
+            d("termino el get")
+            val facturasAdapter = FacturasAdapter(it);
+            recyclerFacturas.setup(activity)
+            recyclerFacturas.adapter = facturasAdapter
+        }, {
+            Log.d("Hola", "error", it)
+        })
 
     }
 

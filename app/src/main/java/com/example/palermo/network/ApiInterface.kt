@@ -30,7 +30,7 @@ interface ApiInterface {
         @Query("page") page: Int = 1,
         @Query("rows") pageSize: Int = 100,
         @Query("_search") search: Boolean = false
-    ): Single<ApiRequest<Facturas>>
+    ): Single<List<Facturas>>
 
     @GET("categorias")
     fun getCategorias(
