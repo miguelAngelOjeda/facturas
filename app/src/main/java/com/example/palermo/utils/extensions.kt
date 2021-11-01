@@ -93,7 +93,7 @@ fun String.toIntOCero(): Int {
 }
 
 fun RecyclerView.setup(activity: FragmentActivity?) {
-    this.layoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
+    this.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
     if (activity != null) {
         this.addItemDecoration(SimpleDividerItemDecoration(activity.baseContext))
     }
