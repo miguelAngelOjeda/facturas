@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.palermo.SecondFragment"
+        android:name="com.example.palermo.fragments.FacturasAddFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_nueva_factura">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

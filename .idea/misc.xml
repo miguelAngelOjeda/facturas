@@ -8,6 +8,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GIT/facturas/app/src/main/res/drawable-v24/edit_text_selector.xml" value="0.20572916666666666" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/drawable/ic_agregar.xml" value="0.21458333333333332" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout-w1240dp/list_item_datos_productos.xml" value="0.142570281124498" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/activity_main.xml" value="0.1984375" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/content_main.xml" value="0.1984375" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/fragment_facturas.xml" value="0.1984375" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/fragment_nueva_factura.xml" value="0.3597733711048159" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/list_item_datos_productos.xml" value="0.5" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/list_item_facturas.xml" value="0.221875" />
+        <entry key="..\:/GIT/facturas/app/src/main/res/layout/search_widget.xml" value="0.302536231884058" />
         <entry key="..\:/Palermo/app/src/main/res/drawable-v24/divisor.xml" value="0.32447916666666665" />
         <entry key="..\:/Palermo/app/src/main/res/drawable-v24/ic_delete_sweep_black_24dp.xml" value="0.29583333333333334" />
         <entry key="..\:/Palermo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21822916666666667" />

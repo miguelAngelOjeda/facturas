@@ -6,6 +6,7 @@ import com.example.palermo.models.Facturas
 import com.example.palermo.models.Precios
 import com.example.palermo.models.Productos
 import com.example.palermo.network.ApiInterface
+import com.example.palermo.network.ApiRequest
 import coomecipar.example.palermo.auth.ConnectionError
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -29,18 +30,29 @@ class DataRepo(val api: ApiInterface) {
         return RequestBody.create(MultipartBody.FORM, partString)
     }
 
-    fun getProductos(): Observable<List<Productos>> = api.getProductos()
-            .compose(RxUtils.basicApi())
-
-    fun getCategorias(): Observable<List<Categorias>> = api.getCategorias()
-            .compose(RxUtils.basicApi())
-
-    fun getPrecios(): Observable<List<Precios>> = api.getPrecios()
-            .compose(RxUtils.basicApi())
-
-
-    fun getFacturas(): Single<List<Facturas>> {
+    fun getFacturas(): Single<ApiRequest<Facturas>> {
         return api.getFacturas()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+    }
+
+    fun getPrecios(): Single<ApiRequest<Precios>> {
+        return api.getPrecios()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+    }
+
+    fun getProductos(): Single<ApiRequest<Productos>> {
+        return api.getProductos()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+    }
+
+    fun getCategorias(): Single<ApiRequest<Categorias>> {
+        return api.getCategorias()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 

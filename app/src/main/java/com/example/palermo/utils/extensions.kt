@@ -29,9 +29,6 @@ import java.io.InputStream
 import java.text.*
 import java.util.*
 
-/**
- * Created by emilio on 3/14/18.
- */
 
 typealias CallBack = () -> Unit
 typealias ItemCallback<T> = (T) -> Unit
@@ -93,6 +90,14 @@ fun String.toIntOCero(): Int {
     } catch (e: Exception) {
        return 0
     }
+}
+
+fun RecyclerView.setup(activity: FragmentActivity?) {
+    this.layoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
+    if (activity != null) {
+        this.addItemDecoration(SimpleDividerItemDecoration(activity.baseContext))
+    }
+    this.setHasFixedSize(true)
 }
 
 fun Double?.toStringOCero(): String {
@@ -207,16 +212,6 @@ inline fun EditText.doOnEditorAction(
     }
 }
 
-
-
-
-fun RecyclerView.setup(activity: FragmentActivity?) {
-    this.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
-    if (activity != null) {
-        this.addItemDecoration(SimpleDividerItemDecoration(activity.baseContext))
-    }
-    this.setHasFixedSize(true)
-}
 
 
 val format = DecimalFormat("#.##");

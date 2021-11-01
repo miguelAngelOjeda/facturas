@@ -18,11 +18,11 @@ interface ApiInterface {
 
     @GET("precios")
     fun getPrecios(
-            @Query("todos") todos: Boolean = false,
+            @Query("all") todos: Boolean = false,
             @Query("page") page: Int = 0,
             @Query("rows") pageSize: Int = 100,
             @Query("_search") search: Boolean = false
-    ): Observable<ApiRequest<Precios>>
+    ): Single<ApiRequest<Precios>>
 
     @GET("facturas")
     fun getFacturas(
@@ -30,21 +30,21 @@ interface ApiInterface {
         @Query("page") page: Int = 1,
         @Query("rows") pageSize: Int = 100,
         @Query("_search") search: Boolean = false
-    ): Single<List<Facturas>>
+    ): Single<ApiRequest<Facturas>>
 
     @GET("categorias")
     fun getCategorias(
-            @Query("todos") todos: Boolean = false,
+            @Query("all") todos: Boolean = false,
             @Query("page") page: Int = 0,
             @Query("rows") pageSize: Int = 100,
             @Query("_search") search: Boolean = false
-    ): Observable<ApiRequest<Categorias>>
+    ): Single<ApiRequest<Categorias>>
 
     @GET("productos")
     fun getProductos(
-            @Query("todos") todos: Boolean = true,
+            @Query("all") todos: Boolean = true,
             @Query("page") page: Int = 0,
             @Query("rows") pageSize: Int = 1000,
             @Query("_search") search: Boolean = false
-    ): Observable<ApiRequest<Productos>>
+    ): Single<ApiRequest<Productos>>
 }

@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.palermo.R
 import com.example.palermo.models.Facturas
 import com.example.palermo.utils.inflate
+import com.example.palermo.utils.toCurrency
+import com.example.palermo.utils.toFechaCorta
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.list_item_facturas.view.*
 
@@ -24,8 +26,8 @@ open class FacturasAdapter(val valores: List<Facturas>) : RecyclerView.Adapter<F
         fun bind(fac: Facturas) {
             view.textViewDescripcion.text = "FACTURA"
             view.textNumFactura.text = fac.codigo
-            view.textTotal.text = fac.total.toString()
-            view.textViewFecha.text = fac.fecha.toString()
+            view.textTotal.text = fac.total.toCurrency()
+            view.textViewFecha.text = fac.fechaCreacion.toFechaCorta()
 
         }
     }

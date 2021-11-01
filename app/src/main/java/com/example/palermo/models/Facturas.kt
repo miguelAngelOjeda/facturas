@@ -7,4 +7,4 @@ data class Facturas(
         var id: Long = 0,
         var codigo: String = "",
         var total: Long = 0,
-        var fecha: Date = Calendar.getInstance().time)
+        var fechaCreacion: Date = Calendar.getInstance().time)

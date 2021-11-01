@@ -16,6 +16,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -60,13 +61,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
+    
+
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+
 
     implementation 'online.devliving:securedpreferencestore:0.7.1'
 
@@ -76,6 +80,7 @@ dependencies {
 
     implementation "androidx.constraintlayout:constraintlayout:2.1.0"
 
+
     implementation 'com.chibatching.kotpref:kotpref:2.2.0'
     implementation 'com.github.salomonbrys.kodein:kodein:4.1.0'
     implementation 'com.github.salomonbrys.kodein:kodein-android:4.1.0'
@@ -84,6 +89,8 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     implementation "com.github.debop:koda-time:2.0.0"
     implementation 'joda-time:joda-time:2.10.1'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
 configurations {
